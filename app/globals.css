@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+ 
+  --breakpoint-xs: 560px;
+  --breakpoint-base: 600px;
+  --breakpoint-xxs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-xsm: 700px;
+  --breakpoint-md: 768px;
+  --breakpoint-lgmd: 880px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+
+.bg-light-gradient {
+  background-color: #ffffff;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,       
+    rgba(240, 240, 240, 0.95) 30%,     
+    rgba(220, 220, 220, 0.9) 60%,     
+    rgba(200, 200, 200, 0.85) 100%    
+  );
+}
+
+.bg-light-nav {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(245, 245, 245, 0.7) 0%,
+    rgba(230, 230, 230, 0.1) 70%,
+    rgba(200, 200, 200, 0.01) 100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* BASE GRADIENT - No inset/z-index so it works on regular divs */
+.bg-neutral-gradient {
+  background-color: #141413;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(175, 172, 161, 0.25) 0%,
+    rgba(175, 172, 161, 0.12) 30%,
+    rgba(20, 20, 19, 0.95) 60%,
+    #141413 100%
+  );
+}
+
+.bg-neutral-gradients {
+  background-color: #141413;
+  background-image: linear-gradient(
+    to top,
+    rgba(175, 172, 161, 0.25) 0%,
+    rgba(175, 172, 161, 0.12) 30%,
+    rgba(20, 20, 19, 0.95) 60%,
+    #141413 100%
+  );
+}
+
+.bg-neutral-gradients-opposite {
+  background-color: #141413;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(175, 172, 161, 0.25) 0%,
+    rgba(175, 172, 161, 0.12) 30%,
+    rgba(20, 20, 19, 0.95) 60%,
+    #141413 100%
+  );
+}
+
+.bg-neutral-nav {
+  background: linear-gradient(
+    to bottom,
+    #141413 0%,                   
+    rgba(20, 20, 19, 0.95) 20%,
+    rgba(175, 172, 161, 0.01) 100%,
+    rgba(175, 172, 161, 0.4) 100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* DESKTOP OVERRIDES */
+@media (min-width: 640px) {
+  .bg-neutral-gradient {
+    background-image: linear-gradient(
+      to right,
+      rgba(175, 172, 161, 0.25) 0%,
+      rgba(175, 172, 161, 0.12) 20%,
+      rgba(20, 20, 19, 0.95) 40%,
+      #141413 70%
+    );
+  }
+
+  .bg-neutral-gradients {
+    background-image: linear-gradient(
+      to left,
+      rgba(175, 172, 161, 0.25) 0%,
+      rgba(175, 172, 161, 0.12) 20%,
+      rgba(20, 20, 19, 0.95) 40%,
+      #141413 70%
+    );
+  }
+
+  .bg-neutral-gradients-opposite {
+    background-image: linear-gradient(
+      to left,
+      rgba(175, 172, 161, 0.25) 0%,
+      rgba(175, 172, 161, 0.12) 20%,
+      rgba(20, 20, 19, 0.95) 40%,
+      #141413 70%
+    );
+  }
+
+  .bg-neutral-nav {
+    background: linear-gradient(
+      to right,
+      rgba(175, 172, 161, 0.5) 0%,
+      rgba(175, 172, 161, 0.05) 0%,
+      rgba(20, 20, 19, 0.95) 70%,
+      #141413 70%
+    );
+  }
+}
+
+.bg-deep-gradient {
+  background-color: #141413;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(175, 172, 161, 0.25) 0%,
+    rgba(175, 172, 161, 0.12) 30%,
+    rgba(20, 20, 19, 0.95) 60%,
+    #141413 100%
+  );
+}
